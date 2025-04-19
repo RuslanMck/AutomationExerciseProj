@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>AutomationExerciseProj</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>24</maven.compiler.source>
+        <maven.compiler.target>24</maven.compiler.target>
+        <!-- surefire-plugin -->
+        <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
+        <!-- compiler-plugin tells Maven which Java version to use for compiling your code -->
+        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- testng Testing framework -->
+        <testng.version>7.10.2</testng.version>
+        <!-- selenide Simplified wrapper around Selenium WebDriver -->
+        <selenide.version>7.8.1</selenide.version>
+        <!-- aspectj Used for aspect-oriented programming (like cross-cutting concerns: logging, reporting, retry logic).
+        In test automation, often used with Allure to hook into test lifecycle events. -->
+        <aspectj.version>1.9.23</aspectj.version>
+        <!-- allure A powerful test report framework that generates reports. -->
+        <allure.version>2.29.1</allure.version>
+        <!-- lombok Reduces boilerplate code in Java.
+        Automatically generates getters, setters, constructors, builders, etc., at compile-time. -->
+        <lombok.version>1.18.38</lombok.version>
+        <!-- jackson JSON library for Java. Converts JSON to Java objects (deserialization) and Java objects to JSON (serialization).
+        Used to map API responses or request payloads.-->
+        <jackson.version>2.18.3</jackson.version>
+        <!-- rest-assured for writing API tests-->
+        <rest-assured.version>5.5.1</rest-assured.version>
+        <!-- hamcrest assertion library allows matching rules like assertThat(value, is(equalTo("text"))).-->
+        <hamcrest.version>3.0</hamcrest.version>
+        <!-- assertj Provides assertions like assertThat(list).hasSize(3).contains("Hello"), more readable than basic assertions. -->
+        <assertj.version>3.27.3</assertj.version>
+        <!-- allure-rest-assured Integrates Allure with REST API tests written using Rest Assured — helps capture request/response logs and attach them to the report. -->
+        <allure-rest-assured.version>2.29.1</allure-rest-assured.version>
+
+    </properties>
+
+
+
+    <build>
+            <plugins>
+
+                <plugin>
+                    <!-- This plugin compiles your Java source code during the Maven build.
+                     <source>: Java version used for compiling (11, 17, etc.)
+                     <target>: Bytecode version generated (also 11, 17, etc.)-->
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                    <configuration>
+                        <!-- argLine adds AspectJ agent at runtime. Required for features like Allure annotations (@Step) to work. -->
+                        <argLine>
+                            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        </argLine>
+
+                        <!-- suiteXmlFile Tells Surefire to use your TestNG suite XML (usually testng.xml) for test configuration. -->
+                        <suiteXmlFiles>
+                            <suiteXmlFile>testng.xml</suiteXmlFile>
+                        </suiteXmlFiles>
+
+                        <!-- This sets a system property available at test runtime. allure.results.directory tells Allure where to output raw test results.-->
+                        <systemPropertyVariables>
+                            <property>
+                                <name>allure.results.directory</name>
+                                <value>${project.build.directory}allure-results</value>
+                            </property>
+                        </systemPropertyVariables>
+                    </configuration>
+                </plugin>
+            </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${hamcrest.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-rest-assured</artifactId>
+            <version>${allure-rest-assured.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
