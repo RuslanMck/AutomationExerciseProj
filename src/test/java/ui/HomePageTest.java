@@ -13,16 +13,19 @@ public class HomePageTest {
     private final HomePageSteps HOME_PAGE_STEPS = new HomePageSteps();
 @BeforeClass
 public void setUp(){
-    Configuration.browserSize = "1920x1080";
-    Configuration.holdBrowserOpen = false; // Headless = no need to hold open
-    Configuration.headless = true;         // Run in headless mode for CI
     Configuration.browser = "chrome";
-    Configuration.browserCapabilities = new ChromeOptions()
-            .addArguments("--disable-dev-shm-usage")
-            .addArguments("--no-sandbox")
-            .addArguments("--disable-gpu")
-            .addArguments("--remote-allow-origins=*")
-            .addArguments("--user-data-dir=/tmp/chrome-profile-" + System.currentTimeMillis());
+    Configuration.headless = true;
+    Configuration.browserSize = "1920x1080";
+    Configuration.holdBrowserOpen = false;
+
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--disable-dev-shm-usage");
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-gpu");
+    options.addArguments("--remote-allow-origins=*");
+    options.addArguments("--window-size=1920,1080");
+    options.addArguments("--user-data-dir=/tmp/profile-" + System.currentTimeMillis()); // Unique profile
+    Configuration.browserCapabilities = options;
 
     Selenide.open(HomePage.BASE_URL);
 }
