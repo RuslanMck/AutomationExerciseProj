@@ -16,9 +16,7 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '24'
-          distribution: 'temurin'
-          cache: maven
+          java-version: 24
 
       - name: Run tests with Maven
         run: mvn clean test -D suiteXmlFile=suites/uiTestSuite.xml
