@@ -35,6 +35,7 @@ public void setUp(){
     Configuration.browserCapabilities = options;
     System.out.println("Opening URL: " + HomePage.BASE_URL);
     Selenide.open(HomePage.BASE_URL);
+    Selenide.screenshot("after-homepage-load");
 
     WebDriver driver = WebDriverRunner.getWebDriver();
     String title = driver.getTitle();
