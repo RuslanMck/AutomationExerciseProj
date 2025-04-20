@@ -21,3 +21,13 @@ jobs:
 
       - name: Run tests with Maven
         run: mvn clean test -D suiteXmlFile=suites/uiTestSuite.xml
+
+
+
+      - name: Publish test report
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          ithub_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
