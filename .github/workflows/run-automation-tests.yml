@@ -16,15 +16,9 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '24'
+          java-version: '17'
           distribution: 'temurin'
+          cache: maven
 
       - name: Run tests with Maven
         run: mvn clean test -D suiteXmlFile=suites/uiTestSuite.xml
-
-      - name: Upload test screenshots
-        if: always() # Upload even if the tests fail
-        uses: actions/upload-artifact@v3
-        with:
-          name: selenide-screenshots
-          path: build/reports/tests
