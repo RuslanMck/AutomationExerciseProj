@@ -34,16 +34,17 @@ public void setUp(){
 
     Configuration.browserCapabilities = options;
     System.out.println("Opening URL: " + HomePage.BASE_URL);
-    Selenide.open(HomePage.BASE_URL);
-    Selenide.screenshot("after-homepage-load");
 
-    WebDriver driver = WebDriverRunner.getWebDriver();
-    String title = driver.getTitle();
-    System.out.println("Page title: " + title);
 }
 
     @Test(description = "Verify the hero slider")
     public void verifyHeroSlider() {
+        Selenide.open(HomePage.BASE_URL);
+        Selenide.screenshot("after-homepage-load");
+
+        WebDriver driver = WebDriverRunner.getWebDriver();
+        String title = driver.getTitle();
+        System.out.println("Page title: " + title);
         Assert.assertTrue(HOME_PAGE_STEPS.checkHeroSliderVisibility());
     }
 
