@@ -71,7 +71,7 @@
 
                         <!-- suiteXmlFile Tells Surefire to use your TestNG suite XML (usually testng.xml) for test configuration. -->
                         <suiteXmlFiles>
-                            <suiteXmlFile>testng.xml</suiteXmlFile>
+                            <suiteXmlFile>suites/uiTestSuite.xml</suiteXmlFile>
                         </suiteXmlFiles>
 
                         <!-- This sets a system property available at test runtime. allure.results.directory tells Allure where to output raw test results.-->
