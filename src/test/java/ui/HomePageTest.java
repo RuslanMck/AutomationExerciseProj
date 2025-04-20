@@ -21,7 +21,10 @@ public void setUp(){
 
     options.addArguments("--no-sandbox");
     options.addArguments("--disable-dev-shm-usage");
-    options.addArguments("--headless");
+    options.addArguments("--disable-gpu");
+    options.addArguments("--headless=new");
+    options.addArguments("--window-size=1920,1080");
+    options.addArguments("--user-data-dir=/tmp/profile-" + System.currentTimeMillis());
 
 
     Configuration.browser = "chrome";
@@ -30,7 +33,12 @@ public void setUp(){
     Configuration.holdBrowserOpen = false;
 
     Configuration.browserCapabilities = options;
+    System.out.println("Opening URL: " + HomePage.BASE_URL);
     Selenide.open(HomePage.BASE_URL);
+
+    WebDriver driver = WebDriverRunner.getWebDriver();
+    String title = driver.getTitle();
+    System.out.println("Page title: " + title);
 }
 
     @Test(description = "Verify the hero slider")
