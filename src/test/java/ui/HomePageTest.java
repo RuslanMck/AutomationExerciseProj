@@ -1,7 +1,10 @@
 package ui;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -13,20 +16,20 @@ public class HomePageTest {
     private final HomePageSteps HOME_PAGE_STEPS = new HomePageSteps();
 @BeforeClass
 public void setUp(){
+
+    ChromeOptions options = new ChromeOptions();
+
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+    options.addArguments("--headless");
+
+
     Configuration.browser = "chrome";
     Configuration.headless = true;
     Configuration.browserSize = "1920x1080";
     Configuration.holdBrowserOpen = false;
 
-    ChromeOptions options = new ChromeOptions();
-    options.addArguments("--disable-dev-shm-usage");
-    options.addArguments("--no-sandbox");
-    options.addArguments("--disable-gpu");
-    options.addArguments("--remote-allow-origins=*");
-    options.addArguments("--window-size=1920,1080");
-    options.addArguments("--user-data-dir=/tmp/profile-" + System.currentTimeMillis()); // Unique profile
     Configuration.browserCapabilities = options;
-
     Selenide.open(HomePage.BASE_URL);
 }
 
