@@ -48,14 +48,14 @@
             <plugins>
 
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <!-- This plugin compiles your Java source code during the Maven build.
                      <source>: Java version used for compiling (11, 17, etc.)
                      <target>: Bytecode version generated (also 11, 17, etc.)-->
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-plugin.version}</version>
                     <configuration>
-                        <source>${maven.compiler.source}</source>
-                        <target>${maven.compiler.target}</target>
+                        <release>24</release>
                     </configuration>
                 </plugin>
 
