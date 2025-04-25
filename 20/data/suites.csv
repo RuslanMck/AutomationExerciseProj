@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Apr 25 16:26:21 GMT 2025","Fri Apr 25 16:26:22 GMT 2025","122","Ui regression suite","Home page","ui.HomePageTest","ui.HomePageTest","verifyHeroSlider","Verify the hero slider",""
