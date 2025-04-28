@@ -6,4 +6,9 @@
             <class name="ui.HomePageTest"/>
         </classes>
     </test>
+    <test name="General Elements" enabled="true">
+        <classes>
+            <class name="ui.GeneralElementsTest"/>
+        </classes>
+    </test>
 </suite>
