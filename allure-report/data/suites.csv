@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","32","Verify if key footer elements are visible","Ui regression suite","Mon Apr 28 12:08:56 CEST 2025","passed","Mon Apr 28 12:08:56 CEST 2025","ui.GeneralElementsTest","General Elements","ui.GeneralElementsTest","verifyKetFooterElementsVisibility"
+"","2","setUp","Ui regression suite","Sun Apr 20 14:02:31 CEST 2025","broken","Sun Apr 20 14:02:31 CEST 2025","ui.HomePageTest","Home page","ui.HomePageTest","setUp"
+"","296","Verify the hero slider","Ui regression suite","Mon Apr 28 12:08:54 CEST 2025","passed","Mon Apr 28 12:08:54 CEST 2025","ui.HomePageTest","Home page","ui.HomePageTest","verifyHeroSlider"
+"","74","Verify if key header elements are visible","Ui regression suite","Mon Apr 28 12:08:56 CEST 2025","passed","Mon Apr 28 12:08:56 CEST 2025","ui.GeneralElementsTest","General Elements","ui.GeneralElementsTest","verifyKeyHeaderElementsVisibility"
+"","85","Verify if the copyright year matches the current year","Ui regression suite","Mon Apr 28 12:08:56 CEST 2025","failed","Mon Apr 28 12:08:56 CEST 2025","ui.GeneralElementsTest","General Elements","ui.GeneralElementsTest","verifyCopyrightYear"
