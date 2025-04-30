@@ -1,11 +1,8 @@
 package ui;
 
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.HomePage;
 import steps.HomePageSteps;
 
 public class HomePageTest extends TestConfig {
@@ -13,7 +10,7 @@ public class HomePageTest extends TestConfig {
 
     @BeforeClass
     public void initTest() {
-        setUp(HomePage.BASE_URL);
+        setUp("base.url");
     }
 
     @Test(description = "Verify the hero slider")

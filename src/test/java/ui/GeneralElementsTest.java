@@ -3,7 +3,6 @@ package ui;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.HomePage;
 import steps.GeneralElementsSteps;
 
 import java.time.Year;
@@ -13,7 +12,7 @@ public class GeneralElementsTest extends TestConfig {
 
     @BeforeClass
     public void initTest() {
-        setUp(HomePage.BASE_URL);
+        setUp("base.url");
     }
 
     //Test disabled due to always falls condition
