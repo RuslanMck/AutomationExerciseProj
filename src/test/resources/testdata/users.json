@@ -1,0 +1,38 @@
+{
+  "valid_users":[
+    {
+      "id": "val-user-01",
+      "email": "uthertester+01@gmail.com",
+      "password": "123qweQWE",
+      "first_name": "Uther",
+      "last_name": "Lightbringer",
+      "phone_number": "+420111222333"
+    },
+    {
+      "id": "val-user-02",
+      "email": "uthertester+02@gmail.com",
+      "password": "123qweQWE",
+      "first_name": "Uther",
+      "last_name": "Lightbringer",
+      "phone_number": "+420111222333"
+    }
+  ],
+  "invalid_users": [
+    {
+      "id": "invalid-email-user",
+      "email": "uthertester+01gmail.com",
+      "password": "123qweQWE",
+      "first_name": "Uther",
+      "last_name": "Lightbringer",
+      "phone_number": "+420111222333"
+    },
+    {
+      "id": "empty-pass-user",
+      "email": "uthertester+01gmail.com",
+      "password": "",
+      "first_name": "Uther",
+      "last_name": "Lightbringer",
+      "phone_number": "+420111222333"
+    }
+  ]
+}
