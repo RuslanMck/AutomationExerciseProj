@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed May 07 16:28:32 GMT 2025","Wed May 07 16:28:33 GMT 2025","1116","Ui regression suite","Home page","ui.HomePageTest","ui.HomePageTest","verifyHeroSlider","Verify the hero slider",""
+"unknown","Wed May 07 16:28:33 GMT 2025","Wed May 07 16:28:33 GMT 2025","0","Ui regression suite","General Elements","ui.GeneralElementsTest","ui.GeneralElementsTest","verifyCopyrightYear","Verify if the copyright year matches the current year",""
+"passed","Wed May 07 16:28:34 GMT 2025","Wed May 07 16:28:34 GMT 2025","146","Ui regression suite","General Elements","ui.GeneralElementsTest","ui.GeneralElementsTest","verifyKetFooterElementsVisibility","Verify if key footer elements are visible",""
+"passed","Wed May 07 16:28:34 GMT 2025","Wed May 07 16:28:34 GMT 2025","112","Ui regression suite","General Elements","ui.GeneralElementsTest","ui.GeneralElementsTest","verifyKeyHeaderElementsVisibility","Verify if key header elements are visible",""
