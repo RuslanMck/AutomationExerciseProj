@@ -17,9 +17,10 @@ public abstract class TestConfig {
         String pageUrl = readPropsHelper.getPropertyByKey("src/test/resources/testconfig/urls.properties", pageUrlKey);
 
         Configuration.browser = "chrome";
-        Configuration.headless = true;
+        Configuration.headless = false;
         Configuration.browserSize = "1920x1080";
-        Configuration.holdBrowserOpen = false;
+        Configuration.holdBrowserOpen = true;
         Selenide.open(pageUrl);
     }
+
 }

@@ -11,4 +11,9 @@
             <class name="ui.GeneralElementsTest"/>
         </classes>
     </test>
+    <test name="Signup Process Test" enabled="true">
+        <classes>
+            <class name="ui.SignupProcessTest"/>
+        </classes>
+    </test>
 </suite>
