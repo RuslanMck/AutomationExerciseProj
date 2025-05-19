@@ -3,7 +3,9 @@
     {
       "id": "val-user-01",
       "email": "uthertester+01@gmail.com",
+      "gender": "male",
       "password": "123qweQWE",
+      "date_of_birth": "01.05.1985",
       "first_name": "Uther",
       "last_name": "Lightbringer",
       "phone_number": "+420111222333"
@@ -11,7 +13,9 @@
     {
       "id": "val-user-02",
       "email": "uthertester+02@gmail.com",
+      "gender": "female",
       "password": "123qweQWE",
+      "date_of_birth": "23.02.2003",
       "first_name": "Uther",
       "last_name": "Lightbringer",
       "phone_number": "+420111222333"
@@ -21,15 +25,19 @@
     {
       "id": "invalid-email-user",
       "email": "uthertester+01gmail.com",
+      "gender": "female",
       "password": "123qweQWE",
       "first_name": "Uther",
+      "date_of_birth": "23.02.2003",
       "last_name": "Lightbringer",
       "phone_number": "+420111222333"
     },
     {
       "id": "empty-pass-user",
       "email": "uthertester+01gmail.com",
+      "gender": "male",
       "password": "",
+      "date_of_birth": "23.02.2003",
       "first_name": "Uther",
       "last_name": "Lightbringer",
       "phone_number": "+420111222333"

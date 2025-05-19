@@ -1,5 +1,6 @@
 package ui;
 
+import helpers.DateOfBirthHelper;
 import helpers.ReadPropsHelper;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -15,6 +16,7 @@ public class SignupProcessTest extends TestConfig {
     private final GeneralModals GENERAL_MODALS = new GeneralModals();
     private final SignupPageSteps SIGNUP_PAGE_STEPS = new SignupPageSteps();
     private ReadPropsHelper readPropsHelper = new ReadPropsHelper();
+    private final DateOfBirthHelper DATE_OF_BIRTH_HELPER = new DateOfBirthHelper();
 
     @BeforeClass
     public void testSetUp(){
@@ -33,6 +35,16 @@ public class SignupProcessTest extends TestConfig {
         LOGIN_PAGE_STEPS.clickSignupButton();
 
         Assert.assertTrue(SIGNUP_PAGE_STEPS.verifyRegistrationFormVisibility());
+
+        String dayOfBirth = DATE_OF_BIRTH_HELPER.validateDay(user.getDate_of_birth());
+        String monthOfBirth = DATE_OF_BIRTH_HELPER.validateMonth(user.getDate_of_birth());
+        String yearOfBirth = DATE_OF_BIRTH_HELPER.validateYear(user.getDate_of_birth());
+
+
+        SIGNUP_PAGE_STEPS.selectDayOfBirth(dayOfBirth);
+        SIGNUP_PAGE_STEPS.selectMonthOfBirth(monthOfBirth);
+        SIGNUP_PAGE_STEPS.selectYearOfBirth(yearOfBirth);
+
 
     }
 

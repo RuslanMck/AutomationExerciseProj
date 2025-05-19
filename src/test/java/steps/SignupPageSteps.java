@@ -10,4 +10,16 @@ public class SignupPageSteps {
     public boolean verifyRegistrationFormVisibility(){
         return SIGNUP_PAGE.isRegistrationFormVisible();
     }
+
+    public void selectDayOfBirth(String day){
+        SIGNUP_PAGE.clickDayOfBirth(day);
+    }
+
+    public void selectMonthOfBirth(String month){
+        SIGNUP_PAGE.clickMonthOfBirth(month);
+    }
+
+    public void selectYearOfBirth(String year){
+        SIGNUP_PAGE.clickYearOfBirth(year);
+    }
 }
