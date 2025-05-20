@@ -3,6 +3,7 @@
 <suite name="Ui regression suite">
     <test name="Home page" enabled="true">
         <classes>
+            <class name="AllureSetup"/>
             <class name="ui.HomePageTest"/>
         </classes>
     </test>

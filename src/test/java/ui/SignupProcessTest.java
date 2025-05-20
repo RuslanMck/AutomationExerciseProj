@@ -24,7 +24,6 @@ public class SignupProcessTest extends TestConfig {
 
     @BeforeClass
     public void testSetUp() {
-        allureResultsClean();
         setUp("login.page");
     }
 
