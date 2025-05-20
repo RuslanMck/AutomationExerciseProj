@@ -10,6 +10,7 @@ public class Header {
     private SelenideElement headerProductsButton = Selenide.$x("//li[a[contains(text(), 'Products') and contains(@href, '/products')]]");
     private SelenideElement headerLoginButton = Selenide.$x("//li[a[contains(text(), ' Signup / Login') and contains(@href, '/login')]]");
     private SelenideElement headerCartButton = Selenide.$x("//li[a[contains(text(), 'Cart') and contains(@href, '/view_cart')]]");
+    private SelenideElement deleteAccountButton = Selenide.$x("//a[text()=' Delete Account']");
 
 
     public boolean headerLogoIsVisible() {
@@ -55,5 +56,10 @@ public class Header {
     public void clickHeaderCartButton() {
         headerCartButton.shouldBe(Condition.visible);
         headerCartButton.click();
+    }
+
+    public void clickDeleteAccountButton(){
+        deleteAccountButton.shouldBe(Condition.visible);
+        deleteAccountButton.click();
     }
 }
