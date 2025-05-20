@@ -1,0 +1,1 @@
+[{"uid":"4b6129382a03e9e","name":"Verify that the user can populate signup input fields and proceed to the next signup page","time":{"start":1747745131491,"stop":1747745131491,"duration":0},"status":"skipped","severity":"normal"},{"uid":"a5c353f9cf00e37f","name":"testSetUp","time":{"start":1747745131486,"stop":1747745131486,"duration":0},"status":"broken","severity":"normal"}]
