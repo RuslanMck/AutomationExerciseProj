@@ -1,6 +1,7 @@
 package ui;
 
 import helpers.DateOfBirthHelper;
+import io.qameta.allure.testng.Tag;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -29,7 +30,8 @@ public class SignupProcessTest extends TestConfig {
 
     @Test(description = "Verify that the user can populate signup input fields and proceed to the next signup page",
             testName = "Verify the signup process")
-    public void verifySignup() {
+    @Tag("Regression")
+    public void shouldRegisterNewUserSuccessfully() {
         GENERAL_MODALS.clickConsentButton();
         User user = UserFactory.get("val-user-01");
 

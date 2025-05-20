@@ -18,12 +18,12 @@ public class LoginPageSteps {
         return loginPage.isSignupFormDisplayed();
     }
 
-    @Step("Verify if the data can be populated to the signup username input field")
+    @Step("Verify if the data can be populated to the signup username input field with: {userName}")
     public void verifySignupUsernameInput(String userName){
         loginPage.populateSignupUsernameInputField(userName);
     }
 
-    @Step("Verify if the data can be populated to the signup email input field")
+    @Step("Verify if the data can be populated to the signup email input field with: {email}")
     public void verifySignupEmailInput(String email){
         loginPage.populateSignupEmailInputField(email);
     }
