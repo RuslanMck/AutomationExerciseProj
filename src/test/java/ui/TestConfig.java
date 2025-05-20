@@ -3,6 +3,10 @@ package ui;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import helpers.ReadPropsHelper;
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.io.IOException;
 
 public abstract class TestConfig {
 
@@ -21,6 +25,14 @@ public abstract class TestConfig {
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = true;
         Selenide.open(pageUrl);
+    }
+
+    public void allureResultsClean(){
+        try {
+            FileUtils.deleteDirectory(new File("allure-results"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

@@ -1,12 +1,13 @@
 package ui;
 
 import helpers.DateOfBirthHelper;
-import helpers.ReadPropsHelper;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.AccountCreatedPage;
 import pages.generalElements.GeneralModals;
+import pages.generalElements.Header;
 import steps.LoginPageSteps;
 import steps.SignupPageSteps;
 import testData.User;
@@ -14,14 +15,15 @@ import testData.UserFactory;
 
 public class SignupProcessTest extends TestConfig {
     private final LoginPageSteps LOGIN_PAGE_STEPS = new LoginPageSteps();
+    private final Header HEADER = new Header();
     private final GeneralModals GENERAL_MODALS = new GeneralModals();
     private final SignupPageSteps SIGNUP_PAGE_STEPS = new SignupPageSteps();
-    private ReadPropsHelper readPropsHelper = new ReadPropsHelper();
     private final DateOfBirthHelper DATE_OF_BIRTH_HELPER = new DateOfBirthHelper();
     private final AccountCreatedPage ACCOUNT_CREATED_PAGE =  new AccountCreatedPage();
 
     @BeforeClass
     public void testSetUp() {
+        allureResultsClean();
         setUp("login.page");
     }
 
@@ -68,9 +70,13 @@ public class SignupProcessTest extends TestConfig {
         SIGNUP_PAGE_STEPS.populatePhone(phoneNumber);
         SIGNUP_PAGE_STEPS.clickCreateAccountButton();
 
-        System.out.println(ACCOUNT_CREATED_PAGE.getConfirmationTitle());
         Assert.assertEquals(ACCOUNT_CREATED_PAGE.getConfirmationTitle(), "ACCOUNT CREATED!");
 
+    }
+    @AfterTest
+    public void cleanUp(){
+        setUp("base.url");
+        HEADER.clickDeleteAccountButton();
     }
 
 }
