@@ -12,4 +12,9 @@ public class User {
     private String phone_number;
     private String gender;
     private String date_of_birth;
+    private String street;
+    private String country;
+    private String sate;
+    private String city;
+    private String zipcode;
 }

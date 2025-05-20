@@ -8,7 +8,12 @@
       "date_of_birth": "01.05.1985",
       "first_name": "Uther",
       "last_name": "Lightbringer",
-      "phone_number": "+420111222333"
+      "phone_number": "+420111222333",
+      "street": "2575 Merton Street",
+      "country": "Canada",
+      "sate": "Ontario",
+      "city": "Toronto",
+      "zipcode": "M1L 3K7"
     },
     {
       "id": "val-user-02",
@@ -18,7 +23,12 @@
       "date_of_birth": "23.02.2003",
       "first_name": "Uther",
       "last_name": "Lightbringer",
-      "phone_number": "+420111222333"
+      "phone_number": "+640211426843",
+      "street": "4 Channel Place",
+      "country": "New Zealand",
+      "sate": "Christchurch",
+      "city": "Avondale",
+      "zipcode": "8061"
     }
   ],
   "invalid_users": [
