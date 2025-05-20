@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue May 20 12:49:04 GMT 2025","Tue May 20 12:49:07 GMT 2025","3526","Ui regression suite","Signup Process Test","ui.SignupProcessTest","ui.SignupProcessTest","verifySignup","Verify that the user can populate signup input fields and proceed to the next signup page",""
