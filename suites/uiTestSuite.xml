@@ -20,7 +20,7 @@
     <test name="Order placements Test" enabled="true">
         <classes>
             <class name="AllureSetup"/>
-            <class name="ui.OrderPlacementProcessTest"/>
+            <class name="ui.GuestUserOrderPlacementTest"/>
         </classes>
     </test>
 </suite>

@@ -3,14 +3,13 @@ package ui;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.ProductDetailsPage;
 import pages.generalElements.GeneralModals;
 import steps.GeneralElementsSteps;
 import steps.GeneralModalsSteps;
 import steps.ProductDetailsPageSteps;
 import steps.ProductListPageSteps;
 
-public class OrderPlacementProcessTest extends TestConfig {
+public class GuestUserOrderPlacementTest extends TestConfig {
 
     private final GeneralElementsSteps GENERAL_ELEMENTS_STEPS = new GeneralElementsSteps();
     private final ProductListPageSteps PRODUCT_LIST_PAGE_STEPS = new ProductListPageSteps();
