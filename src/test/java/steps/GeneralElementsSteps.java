@@ -1,6 +1,5 @@
 package steps;
 
-import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Step;
 import pages.generalElements.Footer;
 import pages.generalElements.Header;
