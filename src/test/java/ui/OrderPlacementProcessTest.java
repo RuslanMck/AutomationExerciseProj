@@ -1,0 +1,37 @@
+package ui;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import pages.ProductDetailsPage;
+import pages.generalElements.GeneralModals;
+import steps.GeneralElementsSteps;
+import steps.ProductDetailsPageSteps;
+import steps.ProductListPageSteps;
+
+public class OrderPlacementProcessTest extends TestConfig {
+
+    private final GeneralElementsSteps GENERAL_ELEMENTS_STEPS = new GeneralElementsSteps();
+    private final ProductListPageSteps PRODUCT_LIST_PAGE_STEPS = new ProductListPageSteps();
+    private final GeneralModals GENERAL_MODALS = new GeneralModals();
+    private final ProductDetailsPageSteps PRODUCT_DETAILS_PAGE_STEPS = new ProductDetailsPageSteps();
+
+
+    @BeforeClass
+    public void setUp(){
+        setUp("base.url");
+        GENERAL_MODALS.clickConsentButton();
+    }
+
+    @Test(description = "As a guest user add product to the cart and place an order")
+    public void guestUserOrderPlacement(){
+        GENERAL_ELEMENTS_STEPS.clickProductsButton();
+        Assert.assertTrue(PRODUCT_LIST_PAGE_STEPS.verifyCategorySidebarVisibility());
+        String actualTitle = PRODUCT_LIST_PAGE_STEPS.verifyProductListTitle().toLowerCase();
+        String expectedTitle = "All Products".toLowerCase();
+        Assert.assertEquals(actualTitle, expectedTitle);
+        PRODUCT_LIST_PAGE_STEPS.selectAndClickARandomProduct();
+        Assert.assertTrue(PRODUCT_DETAILS_PAGE_STEPS.verifyIfAddToCartButtonIsVisible());
+        PRODUCT_DETAILS_PAGE_STEPS.clickAddToCartButton();
+    }
+}
