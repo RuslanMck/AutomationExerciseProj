@@ -31,7 +31,7 @@ public class SignupProcessTest extends TestConfig {
             testName = "Verify the signup process")
     @Tag("Regression")
     public void shouldRegisterNewUserSuccessfully() {
-        GENERAL_MODALS.welcomeModal.clickConsentButton();
+        GENERAL_MODALS.getWelcome().clickConsentButton();
         User user = UserFactory.get("val-user-01");
 
         Assert.assertTrue(LOGIN_PAGE_STEPS.verifySignupFormVisibility(), "Signup form is not visible");

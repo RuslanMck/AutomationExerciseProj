@@ -12,22 +12,22 @@ public class GeneralModalsSteps {
 
         @Step("Verify if the add to cart confirmation modal is displayed")
         public boolean verifyModalDisplaying(){
-            return GENERAL_MODALS.addToCartConfirmationModal.isModalDisplayed();
+            return GENERAL_MODALS.getAddToCartConfirmation().isModalDisplayed();
         }
 
         @Step("Verify the modal body text")
         public String verifyModalBodyText(){
-            return GENERAL_MODALS.addToCartConfirmationModal.getBodyText();
+            return GENERAL_MODALS.getAddToCartConfirmation().getBodyText();
         }
 
         @Step("Verify the modal title text")
         public String verifyModalTitleText(){
-            return GENERAL_MODALS.addToCartConfirmationModal.getModalTitle();
+            return GENERAL_MODALS.getAddToCartConfirmation().getModalTitle();
         }
 
         @Step("Click the view cart button")
         public void clickViewCartButton(){
-            GENERAL_MODALS.addToCartConfirmationModal.clickViewCartButton();
+            GENERAL_MODALS.getAddToCartConfirmation().clickViewCartButton();
         }
     }
 
@@ -35,7 +35,7 @@ public class GeneralModalsSteps {
 
         @Step("Verify if the error modal is displayed while trying to place order as guest user")
         public boolean verifyModalDisplaying(){
-            return GENERAL_MODALS.checkoutSignupModal.isModalDisplayed();
+            return GENERAL_MODALS.getCheckoutSignup().isModalDisplayed();
         }
     }
 }

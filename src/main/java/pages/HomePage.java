@@ -11,7 +11,7 @@ public class HomePage {
     private SelenideElement heroCarouselSlider = Selenide.$x("//*[@id='slider-carousel']");
 
     public boolean heroCarouselSliderVisibility() {
-        GENERAL_ELEMENTS.welcomeModal.clickConsentButton();
+        GENERAL_ELEMENTS.getWelcome().clickConsentButton();
         return heroCarouselSlider.isDisplayed();
     }
 }

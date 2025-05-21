@@ -21,7 +21,7 @@ public class GuestUserOrderPlacementTest extends TestConfig {
     @BeforeClass
     public void setUp(){
         setUp("base.url");
-        GENERAL_MODALS.welcomeModal.clickConsentButton();
+        GENERAL_MODALS.getWelcome().clickConsentButton();
     }
 
     @Test(description = "As a guest user add product to the cart and place an order")

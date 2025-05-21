@@ -3,14 +3,16 @@ package pages.generalElements;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import lombok.Getter;
 
 import static com.codeborne.selenide.Condition.appear;
 
+@Getter
 public class GeneralModals {
 
-    public WelcomeModal welcomeModal = new WelcomeModal();
-    public AddToCartConfirmationModal addToCartConfirmationModal = new AddToCartConfirmationModal();
-    public CheckoutSignupModal checkoutSignupModal = new CheckoutSignupModal();
+    private WelcomeModal welcome = new WelcomeModal();
+    private AddToCartConfirmationModal addToCartConfirmation = new AddToCartConfirmationModal();
+    private CheckoutSignupModal checkoutSignup = new CheckoutSignupModal();
 
 
     public class WelcomeModal {
