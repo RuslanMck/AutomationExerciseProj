@@ -16,6 +16,9 @@ public class OrderPlacementAsLoggedInUser extends TestConfig {
     private final ProductDetailsPageSteps PRODUCT_DETAILS_PAGE_STEPS = new ProductDetailsPageSteps();
     private final GeneralModalsSteps GENERAL_MODAL_STEPS = new GeneralModalsSteps();
     private final CartPageSteps CART_PAGE_STEPS = new CartPageSteps();
+    private final CheckoutPageSteps CHECKOUT_PAGE_STEPS = new CheckoutPageSteps();
+    private final PaymentPageSteps PAYMENT_PAGE_STEPS = new PaymentPageSteps();
+    private final OrderResultPageSteps ORDER_RESULT_PAGE_STEPS = new OrderResultPageSteps();
 
 
     @BeforeClass
@@ -52,5 +55,18 @@ public class OrderPlacementAsLoggedInUser extends TestConfig {
         Assert.assertTrue(CART_PAGE_STEPS.verifyThatCartIsNotEmpty());
 
         CART_PAGE_STEPS.proceedWithCheckout();
+        CHECKOUT_PAGE_STEPS.clickCheckoutButton();
+
+        PAYMENT_PAGE_STEPS.populateCardName(user.getFirst_name()+ " " + user.getLast_name());
+        PAYMENT_PAGE_STEPS.populateCardNumber(user.getCard_number());
+        PAYMENT_PAGE_STEPS.populateCardCvc(user.getCvc());
+        PAYMENT_PAGE_STEPS.populateCardExpMonth(user.getExp_month());
+        PAYMENT_PAGE_STEPS.populateCardExpYear(user.getExp_year());
+        PAYMENT_PAGE_STEPS.placeAnOrder();
+
+        String orderResultStatus = ORDER_RESULT_PAGE_STEPS.verifyResultStatusTest();
+        Assert.assertEquals(orderResultStatus, "Order Placed!".toUpperCase());
+        ORDER_RESULT_PAGE_STEPS.clickContinueButton();
+
     }
 }

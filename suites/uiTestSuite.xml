@@ -1,31 +1,25 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 <suite name="Ui regression suite">
-    <test name="Home page" enabled="false">
+    <test name="Home page" enabled="true">
         <classes>
             <class name="AllureSetup"/>
             <class name="ui.HomePageTest"/>
-        </classes>
-    </test>
-    <test name="General Elements" enabled="false">
-        <classes>
             <class name="ui.GeneralElementsTest"/>
         </classes>
     </test>
-    <test name="Signup Process Test" enabled="false">
+    <test name="Signup Process Test" enabled="true">
         <classes>
             <class name="ui.SignupProcessTest"/>
         </classes>
     </test>
-    <test name="Order placements Test" enabled="false">
+    <test name="Order Placements As Guest User Test" enabled="true">
         <classes>
-            <class name="AllureSetup"/>
             <class name="ui.OrderPlacementAsGuestTest"/>
         </classes>
     </test>
-    <test name="Order placements Test" enabled="true">
+    <test name="Order Placements As Logged In User Test" enabled="true">
         <classes>
-            <class name="AllureSetup"/>
             <class name="ui.OrderPlacementAsLoggedInUser"/>
         </classes>
     </test>

@@ -13,7 +13,11 @@
       "country": "Canada",
       "sate": "Ontario",
       "city": "Toronto",
-      "zipcode": "M1L 3K7"
+      "zipcode": "M1L 3K7",
+      "card_number": "4444333322221111",
+      "cvc": "123",
+      "exp_month": "5",
+      "exp_year": "2035"
     },
     {
       "id": "val-user-02",
@@ -28,7 +32,11 @@
       "country": "New Zealand",
       "sate": "Christchurch",
       "city": "Avondale",
-      "zipcode": "8061"
+      "zipcode": "8061",
+      "card_number": "4444333322221111",
+      "cvc": "123",
+      "exp_month": "12",
+      "exp_year": "2030"
     }
   ],
   "invalid_users": [

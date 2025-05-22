@@ -17,4 +17,8 @@ public class User {
     private String sate;
     private String city;
     private String zipcode;
+    private String card_number;
+    private String cvc;
+    private String exp_month;
+    private String exp_year;
 }
