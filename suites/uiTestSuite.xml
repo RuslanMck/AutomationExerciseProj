@@ -17,10 +17,16 @@
             <class name="ui.SignupProcessTest"/>
         </classes>
     </test>
+    <test name="Order placements Test" enabled="false">
+        <classes>
+            <class name="AllureSetup"/>
+            <class name="ui.OrderPlacementAsGuestTest"/>
+        </classes>
+    </test>
     <test name="Order placements Test" enabled="true">
         <classes>
             <class name="AllureSetup"/>
-            <class name="ui.GuestUserOrderPlacementTest"/>
+            <class name="ui.OrderPlacementAsLoggedInUser"/>
         </classes>
     </test>
 </suite>

@@ -6,6 +6,11 @@ import pages.SignupPage;
 public class SignupPageSteps {
     private final SignupPage SIGNUP_PAGE = new SignupPage();
 
+
+    public class SignUp{
+
+    }
+
     @Step("Verify that the registration form is displayed")
     public boolean verifyRegistrationFormVisibility() {
         return SIGNUP_PAGE.isRegistrationFormVisible();

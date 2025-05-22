@@ -37,5 +37,10 @@ public class GeneralModalsSteps {
         public boolean verifyModalDisplaying(){
             return GENERAL_MODALS.getCheckoutSignup().isModalDisplayed();
         }
+
+        @Step("Get the text of the error message")
+        public String getErrorMessageText(){
+            return GENERAL_MODALS.getCheckoutSignup().getErrorMessageText();
+        }
     }
 }
