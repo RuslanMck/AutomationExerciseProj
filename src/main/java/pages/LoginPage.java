@@ -10,7 +10,6 @@ public class LoginPage {
     private SelenideElement loginEmailInputField = Selenide.$x("//input[@data-qa='login-email']");
     private SelenideElement loginPasswordInputField = Selenide.$x("//input[@data-qa='login-password']");
     private SelenideElement loginButton = Selenide.$x("//button[@data-qa='login-button']");
-
     private SelenideElement signupForm = Selenide.$(".signup-form");
     private SelenideElement signupUsername = Selenide.$x("//input[@data-qa='signup-name']");
     private SelenideElement signupEmail = Selenide.$x("//input[@data-qa='signup-email']");

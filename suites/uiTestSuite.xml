@@ -5,16 +5,22 @@
         <classes>
             <class name="AllureSetup"/>
             <class name="ui.HomePageTest"/>
-        </classes>
-    </test>
-    <test name="General Elements" enabled="true">
-        <classes>
             <class name="ui.GeneralElementsTest"/>
         </classes>
     </test>
     <test name="Signup Process Test" enabled="true">
         <classes>
             <class name="ui.SignupProcessTest"/>
+        </classes>
+    </test>
+    <test name="Order Placements As Guest User Test" enabled="true">
+        <classes>
+            <class name="ui.OrderPlacementAsGuestTest"/>
+        </classes>
+    </test>
+    <test name="Order Placements As Logged In User Test" enabled="true">
+        <classes>
+            <class name="ui.OrderPlacementAsLoggedInUser"/>
         </classes>
     </test>
 </suite>
