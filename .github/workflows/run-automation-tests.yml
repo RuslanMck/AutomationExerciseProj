@@ -2,8 +2,8 @@ name: Run UI Tests
 
 on:
   workflow_dispatch:   # 👈 enables manual trigger from the UI
-  schedule:
-    - cron: '00 16 * * *'
+ # schedule:
+ #   - cron: '00 16 * * *'
 
 jobs:
   run-tests:
